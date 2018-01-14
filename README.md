@@ -172,9 +172,20 @@ Here I will discuss my pipeline, the methods I used to detect and track the vehi
 
 #### 1. PipeLine:
 
+* I have loaded my vehicle and non vehicle training data and then I used some color transform and spatial binning features, as well as histograms of color, to my HOG feature vector.
 
+*  I trained a linear SVM using LinearSVC(C=0.01)
+
+* I applied the slide window techniques with different sizes and overlapping to cover max numbers of pixels in the image.
+
+* Searching for vehicle shapes by using the max numbers of hits from search window function and then apply heatmap concept and draw a rectangle of the detected vehicle.
+
+* Hint: Every step in the pipeline includes a visualization cell in IPython notebook **Vehicle_Detection_and_Tracking_Project.ipynb** in order to view the output of each stage.
 
 #### 2. Improvements:
 
+* The produced video has required a lot of time to run around 7 hours, I had to cut parts of the video to test it a lot and adjust my thresholds.
 
+* Some false positives were introduced into my video,but this was due to that some vehicle images have information about the road. This can be modified by increasing heatmap threshold, but when I tried that the white vehicle when it was moving away at the beginning of the video was lost.
 
+* The above problem can be fixed by increasing the number of overlays but this for sure will increase the time required to save the video from the pipeline.
