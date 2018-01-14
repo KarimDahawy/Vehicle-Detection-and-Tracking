@@ -4,13 +4,14 @@
 
 **The goals / steps of this project are the following:**
 
-	1. Perform a Histogram of Oriented Gradients (HOG) feature extraction on a labeled training set of images and train a classifier Linear SVM classifier
-	2. Optionally, you can also apply a color transform and append binned color features, as well as histograms of color, to your HOG feature vector.
-	3. for those first two steps don't forget to normalize your features and randomize a selection for training and testing.
-	4. Implement a sliding-window technique and use your trained classifier to search for vehicles in images.
-	5. Run your pipeline on a video stream (start with the test_video.mp4 and later implement on full project_video.mp4) 
-	6. create a heat map of recurring detections frame by frame to reject outliers and follow detected vehicles.
-	7. Estimate a bounding box for vehicles detected.
+	1. Perform a Histogram of Oriented Gradients (HOG) feature extraction on a labeled training set of images
+	2. Apply a color transform and append binned color features, as well as histograms of color, to your HOG feature vector.
+	3. Normalize your features and randomize a selection for training and testing.
+	4. Train a classifier Linear SVM classifier.
+	5. Implement a sliding-window technique and use your trained classifier to search for vehicles in images.
+	6. Run your pipeline on a video stream.
+	7. create a heat map of recurring detections frame by frame to reject outliers and follow detected vehicles.
+	8. Estimate a bounding box for vehicles detected.
 
 -------------------------------------------------------------------------------------------------------------------------------
 [//]: # (Image References)
@@ -24,13 +25,14 @@
 [image7]: ./examples/output_bboxes.png
 [video1]: ./project_video.mp4
 
-## Writeup / README
+## *Writeup / README*
 
-#### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.  [Here](https://github.com/udacity/CarND-Vehicle-Detection/blob/master/writeup_template.md) is a template writeup for this project you can use as a guide and a starting point.  
+### Provide a Writeup / README
 
-You're reading it!
+* I have provided a README file that includes all the rubric points and how I addressed each one.
 
-### Histogram of Oriented Gradients (HOG)
+-------------------------------------------------------------------------------------------------------------------------------
+## *Histogram of Oriented Gradients (HOG)*
 
 #### 1. Explain how (and identify where in your code) you extracted HOG features from the training images.
 
