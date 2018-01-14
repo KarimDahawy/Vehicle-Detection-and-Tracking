@@ -70,13 +70,13 @@
 
 * Here are some examples on the used techniques on test images:
 
-	1. Color Histogram:
+	1. **Color Histogram:**
 ![alt text][image4]
 
-	2. Spatial Binning:
+	2. **Spatial Binning:**
 ![alt text][image5]
 
-	3. Hog feature:
+	3. **Hog feature:**
 ![alt text][image6]
 
 ### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
