@@ -22,9 +22,10 @@
 [image4]: ./output_images/4.test_image_Histo.png
 [image5]: ./output_images/5.test_image_spatial.png
 [image6]: ./output_images/6.test_image_hog.png
-
-[image]: ./examples/labels_map.png
-[image]: ./examples/output_bboxes.png
+[image7]: ./output_images/7.Sliding_Window.png
+[image8]: ./output_images/8.Search_window.png
+[image9]: ./output_images/9.Heatmap.png
+[image10]: ./output_images/10.Pipeline_image.png
 
 ## *Writeup / README*
 
@@ -98,13 +99,35 @@
 * Finally I have achieved an accuracy of **99.4%**.
 
 -------------------------------------------------------------------------------------------------------------------------------
-## * Sliding Window Search*
+##  * Sliding Window Search*
 
 ### 1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
-I decided to search random window positions at random scales all over the image and came up with this (ok just kidding I didn't actually ;):
+* I decided to define an area of search where the vehicle would appear and then I applied multi scale windows with different sizes and overlapping 
 
-![alt text][image3]
+* I have used the following windows with the following parameters for each:
+
+	1. Window0:
+			x_start_stop = [0,1300]
+			y_start_stop = [400, 680]
+			window0_size = (64, 64)
+			overlap0 = (0.85, 0.85)
+	2. Window1:
+			x_start_stop = [0,1300]
+			y_start_stop = [400, 680]
+			window1_size = (96, 96)
+			overlap1 = (0.75, 0.75)
+	3. Window2
+			x_start_stop = [0,1300]
+			y_start_stop = [400, 680]
+			window2_size = (128, 128)
+			overlap2 = (0.65, 0.65)
+
+Here's an example of the windows scale:
+
+![alt text][image7]
+
+
 
 ### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
