@@ -99,7 +99,7 @@
 * Finally I have achieved an accuracy of **99.4%**.
 
 -------------------------------------------------------------------------------------------------------------------------------
-##  * Sliding Window Search*
+## *Sliding Window Search*
 
 ### 1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
@@ -131,9 +131,9 @@ Here's an example of the windows scale:
 
 ### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
-Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result.  Here are some example images:
+* Ultimately I searched on three scales using YUV 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result.  Here are some example images:
 
-![alt text][image4]
+![alt text][image8]
 
 -------------------------------------------------------------------------------------------------------------------------------
 
