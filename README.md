@@ -70,18 +70,32 @@
 
 * Here are some examples on the used techniques on test images:
 
-	1. **Color Histogram:**
+1. **Color Histogram:**
+
+
 ![alt text][image4]
 
-	2. **Spatial Binning:**
+2. **Spatial Binning:**
+
+
+
 ![alt text][image5]
 
-	3. **Hog feature:**
+3. **Hog feature:**
+
+
+
 ![alt text][image6]
+
+
 
 ### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
-I trained a linear SVM using...
+* I trained a linear SVM using LinearSVC(C=0.01), I have used the previous combinations methods to extract my features.
+
+* I have normalize the features and randomize a selection for training with **80%** of data and testing with **20%** of data.
+
+* Finally I have achieved an accuracy of **99.4%**.
 
 -------------------------------------------------------------------------------------------------------------------------------
 ## * Sliding Window Search*
