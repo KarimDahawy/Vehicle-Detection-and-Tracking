@@ -16,14 +16,15 @@
 -------------------------------------------------------------------------------------------------------------------------------
 [//]: # (Image References)
 
-[image1]: ./examples/car_not_car.png
-[image2]: ./examples/HOG_example.jpg
-[image3]: ./examples/sliding_windows.jpg
-[image4]: ./examples/sliding_window.jpg
-[image5]: ./examples/bboxes_and_heat.png
-[image6]: ./examples/labels_map.png
-[image7]: ./examples/output_bboxes.png
-[video1]: ./project_video.mp4
+[image1]: ./output_images/1.Vehicles_images.png
+[image2]: ./output_images/2.Non_Vehicles_images.png
+[image3]: ./output_images/3.Hog_Feature.png
+[image4]: ./output_images/4.test_image_Histo.png
+[image5]: ./output_images/5.test_image_spatial.png
+[image6]: ./output_images/6.test_image_hog.png
+
+[image]: ./examples/labels_map.png
+[image]: ./examples/output_bboxes.png
 
 ## *Writeup / README*
 
@@ -36,29 +37,54 @@
 
 ### 1. Explain how (and identify where in your code) you extracted HOG features from the training images.
 
-The code for this step is contained in the first code cell of the IPython notebook (or in lines # through # of the file called `some_file.py`).  
-
-I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
+* I started by reading in all the **vehicle** and **non-vehicle** images. Here is an example of one of each of the **vehicle** and **non-vehicle** images:
 
 ![alt text][image1]
 
-I then explored different color spaces and different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like.
-
-Here is an example using the `YCrCb` color space and HOG parameters of `orientations=8`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
-
-
 ![alt text][image2]
+
+* I then explored different color spaces and different **skimage.hog()** parameters (**orientations**, **pixels_per_cell**, and **cells_per_block**).
+
+* I grabbed random images from **vehicle** images and displayed them to get a feel for what the **skimage.hog()** output looks like.
+
+* Here is an example using the **YUV** color space and HOG parameters of **orientations = 11**, **pixels_per_cell = (16,16)** and **cells_per_block=(2, 2)**
+
+![alt text][image3]
 
 ### 2. Explain how you settled on your final choice of HOG parameters.
 
-I tried various combinations of parameters and 
+* I tried various combinations of parameters for orientation, pix_per_cell and cells_per_cell until I reached to the final combination that allowed me to detect vehicles with high accuracy.
+
+* I have also applied a color transform and spatial binning features, as well as histograms of color, to me HOG feature vector which helped me to increase the number of feature and hence helped me in training my model.
+
+* Here are my final numbers for all the feature extraction:
+
+		Color_Space = 'YUV'
+		Spatial_Size = (16,16)
+		Histo_Bins = 32
+		Histo_Bins_Range = (0,256)
+		Orientation = 11
+		Pixels_Per_Cell = 16
+		Cells_Per_Block = 2
+		Hog_Channel = "ALL"
+
+* Here are some examples on the used techniques on test images:
+
+	1. Color Histogram:
+![alt text][image4]
+
+	2. Spatial Binning:
+![alt text][image5]
+
+	3. Hog feature:
+![alt text][image6]
 
 ### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
 I trained a linear SVM using...
 
 -------------------------------------------------------------------------------------------------------------------------------
-##* Sliding Window Search*
+## * Sliding Window Search*
 
 ### 1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
@@ -105,4 +131,12 @@ Here's an example result showing the heatmap from a series of frames of video, t
 ### Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
 Here I will discuss my pipeline, the methods I used to detect and track the vehicle in the video, what are the problems I faced, how I fixed them and what are the improvements that can used.
+
+#### 1. PipeLine:
+
+
+
+#### 2. Improvements:
+
+
 
